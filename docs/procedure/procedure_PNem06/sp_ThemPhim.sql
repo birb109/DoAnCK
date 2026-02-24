@@ -1,5 +1,5 @@
 CREATE PROCEDURE AddMovie(
-    IN pTittle VARCHAR(128),
+    IN pTitle VARCHAR(128),
     IN pDescription VARCHAR(512),
     IN pImg VARCHAR(225),
     IN pGenreID INT,
@@ -12,7 +12,7 @@ CREATE PROCEDURE AddMovie(
 )
 BEGIN
     INSERT INTO tbl_movie(
-        Movie_Tittle,
+        Movie_Title,
         Movie_Description,
         Movie_Img,
         Genre_ID,
@@ -24,7 +24,7 @@ BEGIN
         Account_ID
     )
     VALUES(
-        pTittle,
+        pTitle,
         pDescription,
         pImg,
         pGenreID,
