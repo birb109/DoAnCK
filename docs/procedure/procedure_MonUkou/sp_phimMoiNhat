@@ -1,6 +1,6 @@
 BEGIN
     SELECT 
-        m.Movie_Tittle AS TenPhim,
+        m.Movie_Tittle AS TenPhim, 
         m.Movie_ReleaseDate AS NgayPhatHanh,
         g.Genre_Name AS TheLoai
     FROM tbl_movie m
