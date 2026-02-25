@@ -1,4 +1,4 @@
-CREATE PROCEDURE AddMovie(
+CREATE PROCEDURE sp_AddMovie(
     IN pTitle VARCHAR(128),
     IN pDescription VARCHAR(512),
     IN pImg VARCHAR(225),
