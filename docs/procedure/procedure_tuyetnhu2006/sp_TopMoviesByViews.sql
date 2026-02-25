@@ -1,15 +1,16 @@
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_TopMoviesByViews`(IN p_Limit INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_TopMoviesByViews`(IN `p_Limit` INT)
 BEGIN
-    SELECT 
-        m.Movie_ID,
-        m.Movie_Title,
-        COUNT(w.Movie_ID) AS Total_Views
+    SELECT m.Movie_ID,
+           m.Movie_Title,
+           COUNT(mw.Movie_ID) AS TotalViews
     FROM tbl_movie m
-    LEFT JOIN tbl_watchlist w 
-        ON m.Movie_ID = w.Movie_ID
+    INNER JOIN `tbl_movie-watchlist` mw
+        ON m.Movie_ID = mw.Movie_ID
+    INNER JOIN tbl_watchlist wl
+        ON mw.Watchlist_ID = wl.Watchlist_ID
     GROUP BY m.Movie_ID, m.Movie_Title
-    ORDER BY Total_Views DESC
+    ORDER BY TotalViews DESC
     LIMIT p_Limit;
 END$$
 DELIMITER ;
