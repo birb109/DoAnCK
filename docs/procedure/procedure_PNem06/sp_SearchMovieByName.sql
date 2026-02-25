@@ -1,4 +1,4 @@
-CREATE PROCEDURE SearchMovieByName(IN keyword VARCHAR(128))
+CREATE PROCEDURE sp_SearchMovieByName(IN keyword VARCHAR(128))
 BEGIN
     SELECT * 
     FROM tbl_movie
