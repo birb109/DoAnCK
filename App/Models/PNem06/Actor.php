@@ -21,9 +21,8 @@ class Actor {
     public function getInfo(){
         return $this->info;
     }
-
     public function getCharacters($actor_id){
-         $sql = "
+        $sql = "
         SELECT 
             Character_ID,
             Character_Name,
