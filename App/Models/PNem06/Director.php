@@ -27,11 +27,9 @@ class Director {
         return $this->social;
     }
     public function getDirectedMovies($director_id){
-
         $sql = "SELECT * 
                 FROM tbl_movie_director
                 WHERE Director_ID = ?";
-
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("i",$director_id);
         $stmt->execute();
