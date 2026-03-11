@@ -37,5 +37,4 @@ class Character {
         return $result->fetch_assoc();
     }
 }
-
 ?>
