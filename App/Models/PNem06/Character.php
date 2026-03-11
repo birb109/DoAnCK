@@ -1,30 +1,21 @@
 <?php
-
 class Character {
-
     private $conn;
-
     private $id;
     private $name;
-
     public function __construct($conn){
         $this->conn = $conn;
     }
-
     public function setCharacter($id,$name){
         $this->id = $id;
         $this->name = $name;
     }
-
     public function getId(){
         return $this->id;
     }
-
     public function getName(){
         return $this->name;
     }
-
-    // UML method
     public function getCharInfo($char_id){
 
         $sql = "
@@ -43,10 +34,8 @@ class Character {
         $stmt->execute();
 
         $result = $stmt->get_result();
-
         return $result->fetch_assoc();
     }
-
 }
 
 ?>
